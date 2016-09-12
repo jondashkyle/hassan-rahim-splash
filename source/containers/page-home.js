@@ -62,7 +62,7 @@ const footer = opts => {
     </div>
   </div>`
 
-  const mobileEl = h`<div class="fs2 dn black" sm="db">
+  const mobileEl = h`<div class="fs1-5 dn black" sm="db">
     <div class="x">
       <div class="c8 p0-75">
         ${colOne()}
@@ -79,7 +79,7 @@ const footer = opts => {
         ${subCols[2]()}
       </div>
       <div class="c4 p0-75">
-        <div class="sans lh2 ttu db" style="font-size: 0.55rem">
+        <div class="sans lh2 ttu db c10" style="font-size: 0.25rem">
           ${blocks.list(options.note, true)}
         </div> 
       </div>
