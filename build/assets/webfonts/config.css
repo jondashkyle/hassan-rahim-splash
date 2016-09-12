@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Fraktur BT';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fraktur-webfont.woff2') format('woff2'),
+       url('fraktur-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Compacta';
+  font-style: normal;
+  font-weight: normal;
+  src: url('CompactaStd-Bold.woff2') format('woff2'),
+       url('CompactaStd-Bold.woff') format('woff');
+}

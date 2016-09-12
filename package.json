@@ -1,0 +1,32 @@
+{
+  "name": "hasan-splash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify source/index -o build/bundle.js -g es2040",
+    "start": "budo source/index.js:bundle.js --dir build/ --pushstate --live -- -g es2040"
+  },
+  "author": "Jon-Kyle <contact@jon-kyle.com> (http://jon-kyle.com)",
+  "license": "ISC",
+  "dependencies": {
+    "bel": "^4.4.3",
+    "budo": "^9.1.0",
+    "choo": "^3.3.0",
+    "css-obj": "0.0.1",
+    "cssobj": "^0.4.7",
+    "gr8": "github:folderstudio/gr8",
+    "marked": "^0.3.6",
+    "recsst": "^1.1.0",
+    "webfontloader": "^1.6.26",
+    "xtend": "^4.0.1"
+  },
+  "browserify": {
+    "global-transform": [
+      "es2040"
+    ]
+  },
+  "devDependencies": {
+    "es2040": "^1.2.3"
+  }
+}
