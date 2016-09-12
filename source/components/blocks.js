@@ -32,9 +32,11 @@ const image = opts => h`
   </div>
 `
 
-const list = content => {
+const list = (content, wrap = false) => {
   const listEls = content.map(item => {
-    const itemEl = h`<li style="white-space: nowrap;"></li>`
+    const itemEl = h`<li style="
+      ${wrap ? '' : 'white-space: nowrap;'}
+    "></li>`
     itemEl.innerHTML = marked(item)
     return itemEl
   })

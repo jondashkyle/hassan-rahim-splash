@@ -34,31 +34,60 @@ const header = () => {
 
 const footer = opts => {
   const options = x({ }, opts)
-  const colOne = blocks.column(options.content[0])
+  const colOne = () => blocks.column(options.content[0])
   const subCols = [
     options.content[1],
     options.content[2],
     options.content[3]
-  ].map(col => h`<div class="xa p0-75">${blocks.column(col)}</div>`)
+  ].map(col => () => blocks.column(col))
 
-  return h`<div class="x xw black fs0-8" sm="fs1-2">
-    <div class="c6 p0-75" sm="c12">
-      ${colOne}
-      <div
-        class="sans lh1-5 fs0-15 ttu db"
-        sm="dn"
-        style="margin-top: 2.3rem;"
-      >
-        ${blocks.list(options.note)}
+  const deskCols = subCols
+    .map(col => h`<div class="xa p0-75">${col()}</div>`)
+
+  const deskEl = h`<div class="db" sm="dn">
+    <div class="x xw black fs0-8" sm="fs2">
+      <div class="c6 p0-75" sm="c12">
+        ${colOne()}
+        <div
+          class="sans lh1-5 fs0-15 ttu db"
+          sm="dn"
+          style="margin-top: 2.3rem;"
+        >
+          ${blocks.list(options.note)}
+        </div>
+      </div>
+      <div class="x c6">
+        ${deskCols}
       </div>
     </div>
-    <div class="x c6" sm="c12">
-      ${subCols}
+  </div>`
+
+  const mobileEl = h`<div class="fs2 dn black" sm="db">
+    <div class="x">
+      <div class="c8 p0-75">
+        ${colOne()}
+      </div>
+      <div class="c4 p0-75">
+        ${subCols[1]()}
+      </div>
     </div>
-    <div class="dn p0-5 fs0-5 sans ttu fs0-15 lh1-5" sm="db">
-      ${blocks.list(options.note)}
+    <div class="x">
+      <div class="c4 p0-75">
+        ${subCols[0]()}
+      </div>
+      <div class="c4 p0-75">
+        ${subCols[2]()}
+      </div>
+      <div class="c4 p0-75">
+        <div class="sans lh2 ttu db" style="font-size: 0.55rem">
+          ${blocks.list(options.note, true)}
+        </div> 
+      </div>
     </div>
   </div>`
+
+  return [ deskEl, mobileEl ]
+
 }
 
 const block = opts => {

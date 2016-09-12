@@ -8,7 +8,8 @@ const settings = {
   padding: [0.25, 0.5, 0.75, 1, 1.5, 2, 4],
   margin: [0.5, 0.75, 1, 1.25, 1.5, 2],
   fontSize: [0.15, 0.25, 0.5, 0.8, 1, 1.2, 1.5, 1.8, 2, 2.2],
-  responsive: true
+  responsive: true,
+  lineHeight: [1, 1.5, 2]
 }
 
 const type = {
