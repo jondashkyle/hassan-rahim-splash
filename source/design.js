@@ -24,7 +24,9 @@ const colors = {
 }
 
 style['html'] = {
-  fontSize: '2.5vw'
+  fontSize: '2.5vw',
+  width: '100vw',
+  overflowX: 'hidden'
 }
 
 style.a = {
